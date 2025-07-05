@@ -1,0 +1,442 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0078D7;
+}
+
+@keyframes bounce {
+
+    0%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(-10);
+    }
+
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+header {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgba(210, 21, 21, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-family: "Kristen ITC", Arial, sans-serif;
+}
+
+.search-bar {
+    flex: 5;
+    margin: 0 2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 3px solid #d41c1c;
+    border-radius: 20px;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+    border-color: #860000;
+    box-shadow: 0 0 10px rgba(215, 143, 0, 0.5);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttons .btn {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.buttons .btn:hover {
+    transform: translateY(-3px);
+    background: #656565;
+}
+
+.hero {
+    margin-top: 80px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('main.png') no-repeat center center/cover;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Popular Destinations Section */
+.popular-destinations {
+    padding: 3rem 2rem;
+    background: #f1f1f1;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    background: url('peakpx.png') no-repeat center center/cover;
+    color: #fff;
+}
+
+.popular-destinations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destination {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.6s;
+}
+
+.destination img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.destination h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #0078D7;
+}
+
+.destination p {
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.8s ease-in-out;
+}
+
+/*The fancy middle button*/
+.fancy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(252, 248, 248);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(255, 255, 255);
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(90deg,
+            rgba(222, 0, 75, 1) 0%,
+            rgba(191, 70, 255, 1) 49%,
+            rgba(0, 212, 255, 1) 100%);
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.offcanvas {
+    background-color: #000;
+    color: #fff;
+}
+
+.offcanvas .offcanvas-header {
+    border-bottom: 1px solid #555;
+}
+
+.offcanvas-body a {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.offcanvas-body a:hover {
+    color: #0078D7;
+}
+
+.offcanvas-body .social-icons img {
+    width: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.offcanvas-body .social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* General Body Styling */
+.about-page {
+    background-color: #000000;
+    color: #000000;
+    background-image: url('main.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header */
+header {
+    background-color: #000000;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #000000;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+/* About Section */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Team Card */
+.team-card {
+    background-color: #1a1a1a;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-card .card-body {
+    padding: 1rem;
+}
+
+.team-card h5 {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.team-card p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.menu-button {
+    position: absolute left;
+    left: 0;
+    top: 20%;
+}
+
+.card {
+    box-shadow: 0 0 5px 0;
+    background: inherit;
+    backdrop-filter: blur(5px);
+    --margin: 50px;
+}
+
+.centered-heading {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .popular-destinations h2 {
+        font-size: 2rem;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+        /* Stack items on small screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
